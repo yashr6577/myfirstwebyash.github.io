@@ -1,0 +1,139 @@
+<?php
+  include 'config.php';
+
+  if(isset($_POST["btn_submit"]))
+  {
+	extract($_POST);
+
+	$insert = mysqli_query($connect,"insert into tb_student(Name,FatharName,Address1,Address2,DOB,Addmissiondate,City,State,Country,Nationality,Gender,Qualification,Cources,Photo,Hobbies,Mobile) values('$sname','$fname','$address1','$address2','$dob','$ad','$city','$state','$cont','$nati','$gen','$qua','$cources','$photo','$hobi','$ph_no')")or die(mysqli_error($connect));
+
+	if($insert){
+		echo "<script>alert('Data Inserted Successfully..!')</script>";
+	}
+	else {
+    echo "<script>alert('Data Error')</script>";
+	}
+  }
+?>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STUDENT.HTML</title>
+   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="jQuery-Validation-Engine-3.0.0/css/validationEngine.jquery.css" type="text/css"/>
+	<link rel="stylesheet" href="jQuery-Validation-Engine-3.0.0/css/template.css" type="text/css"/>
+	<script src="jQuery-Validation-Engine-3.0.0/js/jquery-3.4.1.min.js" type="text/javascript">
+	</script>
+	<script src="jQuery-Validation-Engine-3.0.0/js/languages/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8">
+	</script>
+	<script src="jQuery-Validation-Engine-3.0.0/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8">
+	</script>
+	<script>
+		jQuery(document).ready( function() {
+			// binds form submission and fields to the validation engine
+			jQuery("#stud_form").validationEngine();
+		});
+	</script>
+   <style type="text/css">
+      body
+      {
+         background-color: azure;
+      }
+      table
+      {
+       background-color: aquamarine;
+      }
+      th
+      {
+         background-color: dodgerblue;
+      }
+      .btn
+      {
+         background-color:dimgray;
+      }
+   </style>  
+</head>
+<body>
+  <center><h1>Student Registration Form</h1></center>
+  <hr>
+  <center>
+  
+    <table border="2" cellpadding="10" id="t1">
+       <tr>
+        <td colspan="10" ><a href="student.html"> Student</a></td>
+        <td colspan="10" ><a href="staff.html"> Staff</a></td>
+        <td colspan="10"><a href="sal.html"> Salary</a></td>
+        <td colspan="10"><a href="lib.html"> Library</a></td>
+        <td colspan="10"><a href="home.html"> Logout</a></td>
+       </tr>
+    </table>
+    
+    <marquee> Created by Yash Rathod!..</marquee>
+   <table border="2" cellpadding="10" id="t2">
+    <form method="post" id="stud_form" name="stud_form">
+  	    <tr>
+          <th colspan="2">Name</th> 
+          <td colspan="8"><input class="validate[required,custom[onlyLetterSp]] text-input" type="text" name="sname" placeholder="Please Enter name"></td>
+          <th colspan="8">Father Name</th> 
+          <td colspan="8"><input class="validate[required,custom[onlyLetterSp]] text-input" type="text" name="fname" placeholder="Please Enter name"></td>
+       </tr>
+       <tr>
+          <th colspan="2">Address1</th>
+          <td colspan="8"><textarea name="address1" rows="4" cols="20"></textarea></td>
+          <th colspan="2">Address2</th>
+          <td colspan="8"><textarea name="address2" rows="4" cols="20" ></textarea></td>
+       </tr>
+       <tr>
+          <th colspan="2">DOB</th>
+          <td colspan="8"><input type="date" name="dob" ></td>
+          <th colspan="2">Admission date</th>
+          <td colspan="8"><input type="date" name="ad" ></td>
+       </tr>
+       <tr>
+         <th colspan="2">City</th>
+         <td colspan="8"><select name="city"><option>Jalgaon</option><option>Nasik</option><option>Pune</option><option>Mumbai</option></select></td>
+         <th colspan="2">State</th>
+         <td colspan="8"><select name="state"><option>Maharashtra</option><option>Goa</option><option>Gujrat</option><option>Madhya Pradesh</option></select></td>
+       </tr>
+       <tr>
+          <th colspan="2">Country</th>
+          <td colspan="8"><select name="cont"><option>India</option><option>Australia</option><option>China</option><option>USA</option></select></td>
+          <th colspan="2">Nationality</th>
+          <td colspan="8"><input type="text" name="nati" placeholder="Enter Nationality here"></td>
+       </tr>
+       <tr>
+          <th colspan="2" rowspan="4">Gender</th>
+          <td colspan="8" rowspan="4"><input type="radio" name="gen">Male&nbsp;&nbsp;<input type="radio" name="gen">Female&nbsp;&nbsp;</td>
+          <th colspan="2" rowspan="4">Qualification</th>
+          <td colspan="8"><input type="checkbox" name="qua[]">BCA</td>
+       </tr>
+       <tr><td colspan="8"><input type="checkbox" name="qua[]">MCA</td></tr>
+       <tr><td colspan="8"><input type="checkbox" name="qua[]">MA</td></tr>
+       <tr><td colspan="8"><input type="checkbox" name="qua[]">MBA</td></tr>
+       <tr>
+          <th colspan="2">Cources</th>
+          <td colspan="8"><select name="cources"><option>COMPUTER</option><option>IT</option></select></td>
+          <th colspan="2">Photo</th>
+          <td colspan="8"><input type="file" name="photo" placeholder="Choose file"></td>
+       </tr>
+       <tr>
+          <th colspan="2">Hobbies</th>
+          <td colspan="8"><textarea name="hobi" rows="3" cols="20"></textarea></td>
+          <th colspan="2">Mobile</th>
+          <td colspan="8"><input type="number" name="ph_no" placeholder="Please Enter Number" ></td>
+       </tr>
+       <tr>
+          <th colspan="20" class="btn"><input type="submit" value="Submit" name="btn_submit"></th>
+       </tr>
+    </form>
+   </table>
+  
+  </center>
+  <hr>
+
+</body>
+</html>
