@@ -1,0 +1,109 @@
+<!-- <?php
+  include 'config.php';
+
+  if(isset($_POST["btn_submit"]))
+  {
+	extract($_POST);
+
+	$insert = mysqli_query($connect,"insert into tb_lib(StudentName,StaffName,RegNo1,RegNo2,Department1,Department2,Class,Rank,BookIssue1,BookIssue2,DateofIssue1,DateofIssue2,DateofSubmit1,DateofSubmit2,Dues1,Dues2,BookIssued1,BookIssued2,JournalIssued) values('$sname','$sfname','$rno','$rno2','$dept','$dep','$class','$rank','$ise','$is','$dd','$db','$ds','$dbs','$due','$issu','$bi','$bii','$ji')")or die(mysqli_error($connect));
+
+	if($insert){
+		echo "<script>alert('Data Inserted Successfully..!')</script>";
+	}
+	else {
+    echo "<script>alert('Data Error')</script>";
+	}
+  }
+?> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lib.html</title>
+	<link rel="stylesheet" href="salstyle.css">
+</head>
+<body>
+   <center><h1>Library Record</h1></center><hr>
+   <center>
+   	<form method="post">
+		<table border="2" cellpadding="10" id="t1">
+			<tr>
+			 <td colspan="10" ><a href="student.html"> Student</a></td>
+			 <td colspan="10" ><a href="staff.html"> Staff</a></td>
+			 <td colspan="10"><a href="sal.html"> Salary</a></td>
+			 <td colspan="10"><a href="lib.html"> Library</a></td>
+			 <td colspan="10"><a href="index.html"> Logout</a></td>
+			</tr>
+		 </table>
+       <br>
+     <marquee> Created by Yash Rathod!..</marquee><br>
+     <table border="2" cellpadding="10">
+    	<tr>
+    		<th colspan="6" id="tp">Student</th>
+    		<th colspan="6" id="tp">Staff</th>
+    	</tr>
+    	<tr>
+    		<th colspan="3">Student Name</th>
+    		<td colspan="3"><input type="text" name="sname" placeholder="Please Enter name" ></td>
+    		<th colspan="3">Staff Name</th>
+    		<td colspan="3"><input type="text" name="sfname" placeholder="Please Enter name"></td>
+    	</tr>
+    	<tr>
+    		<th colspan="3">Reg No.</th>
+    		<td colspan="3"><input type="number" name="rno" placeholder="Please Enter regno."></td>
+    		<th colspan="3">Reg No.</th>
+    		<td colspan="3"><input type="number" name="rno2" placeholder="Please Enter regno."></td>
+    	</tr>
+    	<tr>
+    		<th colspan="3">Department</th>
+    		<td colspan="3"><select name="dept"><option>Computer</option><option>IT</option><option>Civil</option><option>Mecanical</option></select></td>
+    		<th colspan="3">Department</th>
+    		<td colspan="3"><select name="dep"><option>Computer</option><option>IT</option><option>Civil</option><option>Mecanical</option></td>
+    	</tr>
+    	<tr>
+    		<th colspan="3">Class</th>
+    		<td colspan="3"><select name="class"><option>CO</option><option>IT</option><option>Ce</option><option>Me</option></td>
+    		<th colspan="3">Rank</th>
+    		<td colspan="3"><select name="rank"><option>1st</option><option>2nd</option><option>3rd</option><option>4th</option></td>
+    	</tr>
+    	<tr>
+    		<th colspan="3" >Book Issue</th>
+            <td colspan="3" ><input type="radio" name="ise">Yes&nbsp;&nbsp;<input type="radio" name="iss">No&nbsp;&nbsp;</td>
+            <th colspan="3" >Book Issue</th>
+            <td colspan="3" ><input type="radio" name="is">Yes&nbsp;&nbsp;<input type="radio" name="issu">Yes&nbsp;&nbsp;</td>
+    	</tr>
+    	<tr>
+    		<th colspan="3">Date of Issue</th>
+      	   	<td colspan="3"><input type="date" name="dd"></td>
+      	   	<th colspan="3">Date of Issue</th>
+      	    <td colspan="3"><input type="date" name="db"></td>
+    	</tr>
+    	<tr>
+    		<th colspan="3">Date of Submit</th>
+      	   	<td colspan="3"><input type="date" name="ds"></td>
+      	   	<th colspan="3">Date of Submit</th>
+      	    <td colspan="3"><input type="date" name="dbs"></td>
+    	</tr>
+    	<tr>
+    		<th colspan="3" >Dues</th>
+            <td colspan="3" ><input type="radio" name="due">Yes&nbsp;&nbsp;<input type="radio" name="due">No&nbsp;&nbsp;</td>
+            <th colspan="3" >Dues</th>
+            <td colspan="3" ><input type="radio" name="issu">No&nbsp;&nbsp;<input type="radio" name="issu">No&nbsp;&nbsp;</td>
+    	</tr>
+    	<tr>
+    		<th colspan="3">Book Issued</th>
+    		<td colspan="3"><select name="bi"><option>JavaScript</option><option>Python</option><option>Php</option><option>Java</option></td>
+    		<th colspan="2">Book Issued </th>
+			<td colspan="1"><select name="bii"><option>Java</option><option>Php</option><option>DS</option><option>WEB DEVELOPMENT</option></td>
+    		<th colspan="2">Journal Issued </th>
+			<td colspan="1"><select name="ji"><option>Sun Microsystems</option><option>Rasmus Lerdorf</option><option>Guido van Rossum</option><option>Brendan Eich</option></td>
+    	</tr>
+    	<tr><th colspan="12" class="btn"><input type="submit" value="Submit" name="btn_submit"></th></tr>
+
+     </table>
+
+   	</form>
+   </center>
+
+</body>
+</html>

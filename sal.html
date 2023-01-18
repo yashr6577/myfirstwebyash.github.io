@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Salary.html</title>
+      <link rel="Stylesheet" href="salstyle.css" >
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+      <title>JQuery Validation Engine</title>
+      <link rel="stylesheet" href="jQuery-Validation-Engine-3.1.0/css/validationEngine.jquery.css" type="text/css"/>
+      <link rel="stylesheet" href="jQuery-Validation-Engine-3.1.0/css/template.css" type="text/css"/>
+      <script src="jQuery-Validation-Engine-3.1.0/js/jquery-3.4.1.min.js" type="text/javascript">
+      </script>
+      <script src="jQuery-Validation-Engine-3.1.0/js/languages/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8">
+      </script>
+      <script src="jQuery-Validation-Engine-3.1.0/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8">
+      </script>
+      <script>
+         jQuery(document).ready( function() {
+            // binds form submission and fields to the validation engine
+             jQuery("#sal_form").validationEngine();
+         });
+      </script>
+      
+</head>
+<body>
+	<center><h1>Salary Section</h1><hr></center>
+	<center>
+		
+      <table border="2" cellpadding="10" id="t1">
+         <tr>
+            <td colspan="10" ><a href="student.html"> Student</a></td>
+            <td colspan="10" ><a href="staff.html"> Staff</a></td>
+            <td colspan="10"><a href="sal.html"> Salary</a></td>
+            <td colspan="10"><a href="lib.html"> Library</a></td>
+            <td colspan="10"><a href="index.html"> Logout</a></td>
+         </tr>
+      </table>
+      <br>
+    <marquee> Created by Yash Rathod!..</marquee><br>
+    <form method="post" id="sal_form">
+         <table border="2" cellpadding="10">
+       
+          <tr>
+             <th colspan="4"id="tp">Principle</th>  
+             <th colspan="4"id="tp">HOD</th> 
+             <th colspan="4"id="tp">Professor</th>   
+          </tr>
+          <tr>
+             <th colspan="2">TA</th>  
+             <td colspan="2"><input type="number" name="ta[]" class="validate[required] text-input"></td> 
+             <th colspan="2">TA</th>  
+             <td colspan="2"><input type="number" name="ta[]" class="validate[required] text-input"></td>  
+             <th colspan="2">TA</th>  
+             <td colspan="2"><input type="number" name="ta[]" class="validate[required] text-input"></td>   
+          </tr>
+          <tr>
+             <th colspan="2">DA</th>  
+             <td colspan="2"><input type="number" name="daa[]" class="validate[required] text-input"></td> 
+             <th colspan="2">DA</th>  
+             <td colspan="2"><input type="number" name="daa[]" class="validate[required] text-input"></td>  
+             <th colspan="2">DA</th>  
+             <td colspan="2"><input type="number" name="daa[]"class="validate[required] text-input"></td>   
+          </tr>
+          <tr>
+             <th colspan="2">Gross</th>  
+             <td colspan="2"><input type="number" name="gs[]"class="validate[required] text-input"></td> 
+             <th colspan="2">Gross</th>  
+             <td colspan="2"><input type="number" name="gs[]"class="validate[required] text-input"></td>  
+             <th colspan="2">Gross</th>  
+             <td colspan="2"><input type="number" name="gs[]"class="validate[required] text-input"></td>   
+          </tr>
+          <tr>
+             <th colspan="2">Net</th>  
+             <td colspan="2"><input type="number" name="n[]"class="validate[required] text-input"></td> 
+             <th colspan="2">Net</th>  
+             <td colspan="2"><input type="number" name="n[]"class="validate[required] text-input"></td>  
+             <th colspan="2">Net</th>  
+             <td colspan="2"><input type="number" name="n[]"class="validate[required] text-input"></td>   
+          </tr>
+          <tr>
+             <th colspan="4"id="tp">Assistant Professor</th>  
+             <th colspan="4"id="tp">Tecnical Assistant</th> 
+              <th colspan="4"id="tp">Pion</th>   
+          </tr>
+          <tr>
+             <th colspan="2">TA</th>  
+             <td colspan="2"><input type="number" name="taa[]"class="validate[required] text-input"></td> 
+             <th colspan="2">TA</th>  
+             <td colspan="2"><input type="number" name="taa[]"class="validate[required] text-input"></td>  
+             <th colspan="2">TA</th>  
+             <td colspan="2"><input type="number" name="taa[]"class="validate[required] text-input"></td>   
+          </tr>
+          <tr>
+             <th colspan="2">DA</th>  
+             <td colspan="2"><input type="number" name="da[]"class="validate[required] text-input"></td> 
+             <th colspan="2">DA</th>  
+             <td colspan="2"><input type="number" name="da[]"class="validate[required] text-input"></td>  
+             <th colspan="2">DA</th>  
+             <td colspan="2"><input type="number" name="da[]"class="validate[required] text-input"></td>   
+          </tr>
+          <tr>
+             <th colspan="2">Gross</th>  
+             <td colspan="2"><input type="number" name="g[]"class="validate[required] text-input"></td> 
+             <th colspan="2">Gross</th>  
+             <td colspan="2"><input type="number" name="g[]"class="validate[required] text-input"></td>  
+             <th colspan="2">Gross</th>  
+             <td colspan="2"><input type="number" name="g[]"class="validate[required] text-input"></td>   
+          </tr>
+          <tr>
+             <th colspan="2">Net</th>  
+             <td colspan="2"><input type="number" name="net[]"class="validate[required] text-input"></td> 
+             <th colspan="2">Net</th>  
+             <td colspan="2"><input type="number" name="net[]"class="validate[required] text-input"></td>  
+             <th colspan="2">Net</th>  
+             <td colspan="2"><input type="number" name="net[]"class="validate[required] text-input"></td>   
+          </tr>
+          <tr><th colspan="12" class="btn"><input type="submit" value="Submit"></th></tr>
+         </table>
+      </form>
+	</center>
+</body>
+</html>
